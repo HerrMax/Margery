@@ -21,3 +21,26 @@ C:\Users\Milky Max\Desktop\USER0460\USER0460\obj\Debug\USER0460.application
 C:\Users\Milky Max\Desktop\USER0460\USER0460\obj\Debug\USER0460.exe
 C:\Users\Milky Max\Desktop\USER0460\USER0460\obj\Debug\USER0460.pdb
 C:\Users\Milky Max\Desktop\USER0460\USER0460\obj\Debug\Margery.csproj.CoreCompileInputs.cache
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\USER0460.exe.config
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\USER0460.exe.manifest
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\USER0460.application
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\USER0460.exe
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\USER0460.pdb
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\Google.Apis.Core.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\Newtonsoft.Json.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\System.Net.Http.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\System.Security.Cryptography.Algorithms.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\System.Security.Cryptography.Encoding.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\System.Security.Cryptography.Primitives.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\Google.Apis.Core.xml
+E:\Users\Max\Documents\GitHub\Margery\USER0460\bin\Debug\Newtonsoft.Json.xml
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\Margery.csprojResolveAssemblyReference.cache
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\USER0460.USER0460.resources
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\USER0460.Properties.Resources.resources
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\Margery.csproj.GenerateResource.Cache
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\Margery.csproj.CoreCompileInputs.cache
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\USER0460.exe.manifest
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\USER0460.application
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\USER0460.exe
+E:\Users\Max\Documents\GitHub\Margery\USER0460\obj\Debug\USER0460.pdb
