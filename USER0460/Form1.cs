@@ -68,16 +68,6 @@ namespace USER0460
             speechS.SpeakAsync("Online");
         }
 
-        private void speak(string input, string output)
-        {
-            richTextBox1.AppendText("User : " + input + "\n");
-            richTextBox1.AppendText("Margery : " + output + "\n");
-            speechS.Speak(output);
-
-            if (alwaysActive == true) active = true;
-            else active = false;
-        }
-
         private void speechR_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             Random random = new Random();
@@ -92,7 +82,7 @@ namespace USER0460
 
             if (active == true)
             {
-
+                Debug.Print("Dinosaur");
                 if (r == "how are you")
                     speak("How are you?", "I am a bot. I do not have feelings.");
 
@@ -111,8 +101,8 @@ namespace USER0460
                 if (r == "is radiohead good")
                     speak("Is radiohead good?", "Radiohead is good.");
 
-                if (r == "always active")
-                    alwaysActive = !alwaysActive; speak("Always active.", "Always active is now set to " + alwaysActive);
+                //if (r == "always active")
+                //    alwaysActive = !alwaysActive; speak("Always active.", "Always active is now set to " + alwaysActive);
 
                 if (r == "what are you?")
                     speak("What are you?", "I am a thot.");
@@ -148,6 +138,16 @@ namespace USER0460
                         adjectives[randAdjective3] + " " + nouns[randNoun2] + ".");
                 }
             }
+        }
+
+        private void speak(string input, string output)
+        {
+            richTextBox1.AppendText("User : " + input + "\n");
+            richTextBox1.AppendText("Margery : " + output + "\n");
+            speechS.Speak(output);
+
+            if (alwaysActive == true) active = true;
+            else active = false;
         }
 
         //Contains negligible UI stuff
