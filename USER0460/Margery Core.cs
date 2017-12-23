@@ -24,7 +24,7 @@ namespace USER0460
 
         //Lists full of responses, should be condensed into text files as soon as possible
         #region
-        string[] jokes = { "Tell me a joke", "How do you make an eggroll? You push it." };
+        string[] jokes = { "How do you make an eggroll? You push it.", "What colour is cheesecake? Cheesecake colour.", "What's white on top and black on the bottom? Society." };
         string[] opinions = {"That's disgusting.", "It's amazing.", "It makes me creamy.",
                         "Why wouldn't I?", "Who does?", "Boring.", "It's dank as heck.", "No, it shouldn't exist."};
         string[] greetings = { "Hello!", "Hey!", "Yo waddup my nigger!", "Greetings!", "Yo!", "Hi!", "Oy!", "Howdy!", "Sup!", "Fuck off!" };
@@ -111,10 +111,13 @@ namespace USER0460
                 if (r == "is radiohead good")
                     speak("Is radiohead good?", "Radiohead is good.");
 
-                //if (r == "always active")
-                //    alwaysActive = !alwaysActive; speak("Always active.", "Always active is now set to " + alwaysActive);
+                if (r == "always active")
+                {
+                    alwaysActive = !alwaysActive;
+                    speak("Always active.", "Always active is now set to " + alwaysActive);
+                } 
 
-                if (r == "what are you?")
+                if (r == "what are you")
                     speak("What are you?", "I am a thot.");
 
                 if (r == "what is the time")
@@ -126,8 +129,8 @@ namespace USER0460
                 if (r == "do you like")
                     speak("Do you like", opinions[random.Next(opinions.Length)]);
 
-                if(r == "hello" || r == "hi" || r == "hey" || r == "yo" || r == "greetings")
-                    speak("Hello.", greetings[random.Next(greetings.Length)]);
+                //if(r == "hello" || r == "hi" || r == "hey" || r == "yo" || r == "greetings")
+                    //speak("Hello.", greetings[random.Next(greetings.Length)]);
 
                 if(r == "tell me a joke")
                     speak("Tell me a joke.", jokes[random.Next(jokes.Length)]);
@@ -154,7 +157,7 @@ namespace USER0460
         {
             Console.AppendText("User : " + input + "\n");
             Console.AppendText("Margery : " + output + "\n");
-            speechS.Speak(output);
+            speechS.SpeakAsync(output);
 
             if (alwaysActive == true) active = true;
             else active = false;
