@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USER0460.exe" size="19968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="USER0460.exe" size="20480">
       <assemblyIdentity name="USER0460" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PJ2+2cXVnaNHok1+JUCco+GACEcucvEj7XngDGe3s1M=</dsig:DigestValue>
+        <dsig:DigestValue>ftNuVsGYZ9YNsLSLu4zvqDTfJ17XaYy9iEcY5NtHkMs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

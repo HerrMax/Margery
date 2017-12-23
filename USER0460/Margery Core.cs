@@ -24,7 +24,7 @@ namespace USER0460
         Choices commands = new Choices();
         string lastCommand = "";
 
-        //Lists full of responses, should be condensed into text files as soon as possible
+        //Lists full of responses
         #region
         string[] jokes = File.ReadAllLines(@"C:\Dictionaries\Jokes.txt");
         string[] opinions = File.ReadAllLines(@"C:\Dictionaries\Opinions.txt");
@@ -33,6 +33,7 @@ namespace USER0460
         string[] nouns = File.ReadAllLines(@"C:\Dictionaries\Nouns.txt");
         string[] verbs = File.ReadAllLines(@"C:\Dictionaries\PastVerbs.txt");
         string[] adverbs = File.ReadAllLines(@"C:\Dictionaries\Adverbs.txt");
+        string[] swears = File.ReadAllLines(@"C:\Dictionaries\Swears.txt");
         string[] places = { "park", "shop", "bridge", "hotel", "cellar", "beach", "dungeon", "corner", "restaurant",
                         "alleyway", "bedroom", "kitchen", "shopping centre", "school", "classroom", "library", "cafeteria", "motorway",
                     "street", "alleyway", "gay club", "ceiling", "chuch", "concentration camp" };
@@ -47,8 +48,8 @@ namespace USER0460
             commands.Add(new string[] {"how are you", "what do you think of dogs", "always active",
                 "margery", "margery wake up you lepton", "cancel", "ok computer", "is radiohead good", "say text", "what is the time", "what is the date",
             "is this guy annoying", "do you like", "tell me a story", "tell me a joke", "hello", "hi", "hey", "yo", "greetings", "how old are you", "what is the weather",
-            "about", "what are you", "who made you", "always active", "stop", "next", "last", "toggle pause", "toggle play", "previous", "back", "skip", "forward", "sorry",
-                "what was that", "i didn't get that" });
+            "about", "what are you", "who made you", "always active", "stop", "shut up", "next", "last", "toggle pause", "toggle play", "previous", "back", "skip", "forward", "sorry",
+                "what was that", "i didn't get that", "insult me" });
 
             Grammar grammar = new Grammar(new GrammarBuilder(commands));
 
@@ -79,6 +80,11 @@ namespace USER0460
             if(r == "cancel" && alwaysActive == false && active == true)
             {
                 speak("Cancel.", "Cancelled.", false);
+            }
+
+            if(r == "stop" || r == "shut up")
+            {
+                speechS.SpeakAsyncCancelAll();
             }
                 
             if (active == true)
@@ -125,8 +131,11 @@ namespace USER0460
                 //if(r == "hello" || r == "hi" || r == "hey" || r == "yo" || r == "greetings")
                 //speak("Hello.", greetings[random.Next(greetings.Length)], true);
 
-                if(r == "tell me a joke")
+                if (r == "tell me a joke")
                     speak("Tell me a joke.", jokes[random.Next(jokes.Length)], true);
+
+                if(r == "insult me")
+                    speak("Insult me.", "You " + swears[random.Next(swears.Length)] + " " + swears[random.Next(swears.Length)] + " " + swears[random.Next(swears.Length)] + ".", true);
 
                 if (r == "tell me a story")
                 {
