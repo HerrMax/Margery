@@ -11,6 +11,7 @@ using System.Speech.Synthesis;
 using System.Speech.Recognition;
 using System.Diagnostics;
 using System.IO;
+using USER0460.Properties;
 
 namespace USER0460
 {
@@ -21,26 +22,17 @@ namespace USER0460
         bool active = false;
         bool alwaysActive = false;
         Choices commands = new Choices();
+        string lastCommand = "";
 
         //Lists full of responses, should be condensed into text files as soon as possible
         #region
-        string[] jokes = { "How do you make an eggroll? You push it.", "What colour is cheesecake? Cheesecake colour.", "What's white on top and black on the bottom? Society." };
-        string[] opinions = {"That's disgusting.", "It's amazing.", "It makes me creamy.",
-                        "Why wouldn't I?", "Who does?", "Boring.", "It's dank as heck.", "No, it shouldn't exist."};
-        string[] greetings = { "Hello!", "Hey!", "Yo waddup my nigger!", "Greetings!", "Yo!", "Hi!", "Oy!", "Howdy!", "Sup!", "Fuck off!" };
-        string[] adjectives = { "old", "young", "happy", "depressed", "creepy", "big", "yummy", "tasty", "long", "yellow",
-                        "black", "white", "sexy", "moist", "sadistic", "crippled", "French", "ductile", "hard", "flaccid", "squishy",
-                    "lustrous", "retarded", "vulnerable", "horny", "smelly", "fragile", "mouldy", "posh", "poor", "creamy", "dreamy",
-                    "meemy", "milky" };
-        string[] nouns = { "dog", "cat", "man", "woman", "boy", "girl", "table", "corpse", "cow", "horse", "book", "shoe",
-                        "tiger", "lemon", "cheese", "potato", "car", "elevator", "meme", "creeper", "mouse", "hamster", "nigger",
-                    "curtain", "laptop", "microphone", "milk carton", "milk cell", "baby", "bus", "box", "banana", "lamp", "door", "bag",
-                    "Hitler", "jew", "Nazi" };
-        string[] verbs = { "ate", "sodomised", "destroyed", "kicked", "touched", "raped", "carressed", "licked", "digested",
-                        "fisted", "fingered", "drank", "drowned", "stabbed", "hanged", "lynched", "whipped", "painted", "skinned", "shot",
-                    "fought", "drove", "teabagged", "turned on", "bombed", "gassed", "massacred", "torchered" };
-        string[] adverbs = { "quickly", "stealthily", "cheekily", "slowly", "cautiously", "quietly", "kindly", "noisily",
-                        "softly", "seductively", "happily", "hungrily", "advertantly", "violently", "angrily", "reluctantly" };
+        string[] jokes = File.ReadAllLines(@"C:\Dictionaries\Jokes.txt");
+        string[] opinions = File.ReadAllLines(@"C:\Dictionaries\Opinions.txt");
+        string[] greetings = File.ReadAllLines(@"C:\Dictionaries\Greetings.txt");
+        string[] adjectives = File.ReadAllLines(@"C:\Dictionaries\Adjectives.txt");
+        string[] nouns = File.ReadAllLines(@"C:\Dictionaries\Nouns.txt");
+        string[] verbs = File.ReadAllLines(@"C:\Dictionaries\PastVerbs.txt");
+        string[] adverbs = File.ReadAllLines(@"C:\Dictionaries\Adverbs.txt");
         string[] places = { "park", "shop", "bridge", "hotel", "cellar", "beach", "dungeon", "corner", "restaurant",
                         "alleyway", "bedroom", "kitchen", "shopping centre", "school", "classroom", "library", "cafeteria", "motorway",
                     "street", "alleyway", "gay club", "ceiling", "chuch", "concentration camp" };
@@ -55,7 +47,8 @@ namespace USER0460
             commands.Add(new string[] {"how are you", "what do you think of dogs", "always active",
                 "margery", "margery wake up you lepton", "cancel", "ok computer", "is radiohead good", "say text", "what is the time", "what is the date",
             "is this guy annoying", "do you like", "tell me a story", "tell me a joke", "hello", "hi", "hey", "yo", "greetings", "how old are you", "what is the weather",
-            "about", "what are you", "who made you", "always active", "stop", "next", "last", "toggle pause", "toggle play", "previous", "back", "skip", "forward" });
+            "about", "what are you", "who made you", "always active", "stop", "next", "last", "toggle pause", "toggle play", "previous", "back", "skip", "forward", "sorry",
+                "what was that", "i didn't get that" });
 
             Grammar grammar = new Grammar(new GrammarBuilder(commands));
 
@@ -79,61 +72,61 @@ namespace USER0460
 
             if(r == "margery" || r == "ok computer" || r == "margery wake up you lepton" && active == false)
             {
-                speak("Margery?", "Yes?");
+                speak("Margery?", "Yes?", false);
                 active = true;
-                Debug.Print("Enable");
             }
 
             if(r == "cancel" && alwaysActive == false && active == true)
             {
-                speak("Cancel.", "Cancelled.");
-                Debug.Print("Cancel");
+                speak("Cancel.", "Cancelled.", false);
             }
                 
             if (active == true)
             {
-                Debug.Print("Active thing.");
+                if(r == "sorry" || r == "what was that" || r == "i didn't get that")
+                    speak("What was that?", @"I said """ + lastCommand + @""" you deaf cunt.", false);
+                
                 if (r == "how are you")
-                    speak("How are you?", "I am a bot. I do not have feelings.");
+                    speak("How are you?", "I am a bot. I do not have feelings.", true);
 
                 if (r == "say text")
-                    speak("Say text.", SayBox.Text);
+                    speak("Say text.", SayBox.Text, true);
 
                 if (r == "what do you think of dogs")
-                    speak("What do you think of dogs?", "They look sexy.");
+                    speak("What do you think of dogs?", "They look sexy.", true);
 
                 if (r == "what is the weather")
-                    speak("What is the weather?", "Google it or something, I don't fucking know.");
+                    speak("What is the weather?", "Google it or something, I don't fucking know.", true);
 
                 if (r == "is this guy annoying")
-                    speak("Is this guy annoying?", "Yes he is very annoying, I will beat his face with my dick if he doesnt shut up.");
+                    speak("Is this guy annoying?", "Yes he is very annoying, I will beat his face with my dick if he doesnt shut up.", true);
 
                 if (r == "is radiohead good")
-                    speak("Is radiohead good?", "Radiohead is good.");
+                    speak("Is radiohead good?", "Radiohead is good.", true);
 
                 if (r == "always active")
                 {
                     alwaysActive = !alwaysActive;
-                    speak("Always active.", "Always active is now set to " + alwaysActive);
+                    speak("Always active.", "Always active is now set to " + alwaysActive, true);
                 } 
 
                 if (r == "what are you")
-                    speak("What are you?", "I am a thot.");
+                    speak("What are you?", "I am a thot.", true);
 
                 if (r == "what is the time")
-                    speak("What is the time?", "Local time is " + DateTime.Now.ToString("h:mm tt") + ".");
+                    speak("What is the time?", "Local time is " + DateTime.Now.ToString("h:mm tt") + ".", true);
 
                 if (r == "what is the date")
-                    speak("What is the date?", "Local date is " + DateTime.Now.ToString("dd/MM/yyyy") + ".");
+                    speak("What is the date?", "Local date is " + DateTime.Now.ToString("dd/MM/yyyy") + ".", true);
 
                 if (r == "do you like")
-                    speak("Do you like", opinions[random.Next(opinions.Length)]);
+                    speak("Do you like", opinions[random.Next(opinions.Length)], true);
 
                 //if(r == "hello" || r == "hi" || r == "hey" || r == "yo" || r == "greetings")
-                    //speak("Hello.", greetings[random.Next(greetings.Length)]);
+                //speak("Hello.", greetings[random.Next(greetings.Length)], true);
 
                 if(r == "tell me a joke")
-                    speak("Tell me a joke.", jokes[random.Next(jokes.Length)]);
+                    speak("Tell me a joke.", jokes[random.Next(jokes.Length)], true);
 
                 if (r == "tell me a story")
                 {
@@ -148,12 +141,12 @@ namespace USER0460
 
                     speak("Tell me a story", "The " + adjectives[randAdjective] + " " + adjectives[randAdjective2] + " " + nouns[randNoun] +
                         " went to the " + places[randPlace] + " and " + adverbs[randAdverb] + " " + verbs[randVerb] + " a " + 
-                        adjectives[randAdjective3] + " " + nouns[randNoun2] + ".");
+                        adjectives[randAdjective3] + " " + nouns[randNoun2] + ".", true);
                 }
             }
         }
 
-        private void speak(string input, string output)
+        private void speak(string input, string output, bool keepCommand)
         {
             Console.AppendText("User : " + input + "\n");
             Console.AppendText("Margery : " + output + "\n");
@@ -161,6 +154,7 @@ namespace USER0460
 
             if (alwaysActive == true) active = true;
             else active = false;
+            if(keepCommand == true) lastCommand = output;
         }
 
         //Contains negligible UI stuff
@@ -183,7 +177,7 @@ namespace USER0460
         private void button1_Click(object sender, EventArgs e)
         {
             speechS.SpeakAsync(SayBox.Text);
-            Console.AppendText("Bot : " + SayBox.Text + "\n");
+            Console.AppendText("Margery : " + SayBox.Text + "\n");
             if (!KeepText.Checked) SayBox.Clear();
         }
 

@@ -58,11 +58,12 @@
             this.Console.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Console.Location = new System.Drawing.Point(8, 18);
+            this.Console.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Console.Location = new System.Drawing.Point(8, 23);
             this.Console.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Console.Name = "Console";
             this.Console.ReadOnly = true;
-            this.Console.Size = new System.Drawing.Size(383, 339);
+            this.Console.Size = new System.Drawing.Size(381, 341);
             this.Console.TabIndex = 0;
             this.Console.Text = "";
             this.Console.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -70,10 +71,10 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(308, 366);
+            this.button1.Location = new System.Drawing.Point(308, 372);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 52);
+            this.button1.Size = new System.Drawing.Size(81, 51);
             this.button1.TabIndex = 1;
             this.button1.Text = "Say";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,11 +92,11 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.KeepText);
-            this.groupBox1.Location = new System.Drawing.Point(595, 15);
+            this.groupBox1.Location = new System.Drawing.Point(595, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(216, 425);
+            this.groupBox1.Size = new System.Drawing.Size(219, 432);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
@@ -104,10 +105,10 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(8, 388);
+            this.button3.Location = new System.Drawing.Point(8, 395);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 28);
+            this.button3.Size = new System.Drawing.Size(203, 28);
             this.button3.TabIndex = 13;
             this.button3.Text = "Clear RAW";
             this.button3.UseVisualStyleBackColor = true;
@@ -131,7 +132,7 @@
             this.trackBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(200, 56);
+            this.trackBar2.Size = new System.Drawing.Size(203, 56);
             this.trackBar2.TabIndex = 11;
             this.trackBar2.Value = 100;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
@@ -154,19 +155,21 @@
             this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.trackBar1.Minimum = -10;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(200, 56);
+            this.trackBar1.Size = new System.Drawing.Size(203, 56);
             this.trackBar1.TabIndex = 9;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.MaleRB);
             this.groupBox3.Controls.Add(this.FemaleRB);
-            this.groupBox3.Location = new System.Drawing.Point(8, 18);
+            this.groupBox3.Location = new System.Drawing.Point(8, 23);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(200, 82);
+            this.groupBox3.Size = new System.Drawing.Size(203, 82);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Gender";
@@ -202,10 +205,10 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(8, 352);
+            this.button2.Location = new System.Drawing.Point(8, 359);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 28);
+            this.button2.Size = new System.Drawing.Size(203, 28);
             this.button2.TabIndex = 1;
             this.button2.Text = "Clear console";
             this.button2.UseVisualStyleBackColor = true;
@@ -215,7 +218,7 @@
             // 
             this.KeepText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.KeepText.AutoSize = true;
-            this.KeepText.Location = new System.Drawing.Point(8, 324);
+            this.KeepText.Location = new System.Drawing.Point(8, 331);
             this.KeepText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.KeepText.Name = "KeepText";
             this.KeepText.Size = new System.Drawing.Size(148, 21);
@@ -232,11 +235,11 @@
             this.groupBox2.Controls.Add(this.SayBox);
             this.groupBox2.Controls.Add(this.Console);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(17, 15);
+            this.groupBox2.Location = new System.Drawing.Point(17, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(397, 425);
+            this.groupBox2.Size = new System.Drawing.Size(397, 432);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Console";
@@ -245,7 +248,7 @@
             // 
             this.SayBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SayBox.Location = new System.Drawing.Point(8, 366);
+            this.SayBox.Location = new System.Drawing.Point(8, 372);
             this.SayBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SayBox.Name = "SayBox";
             this.SayBox.Size = new System.Drawing.Size(289, 51);
@@ -257,11 +260,11 @@
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.RAW);
-            this.groupBox4.Location = new System.Drawing.Point(421, 12);
+            this.groupBox4.Location = new System.Drawing.Point(421, 11);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(165, 427);
+            this.groupBox4.Size = new System.Drawing.Size(165, 432);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "RAW";
@@ -271,7 +274,8 @@
             this.RAW.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RAW.Location = new System.Drawing.Point(5, 21);
+            this.RAW.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RAW.Location = new System.Drawing.Point(5, 23);
             this.RAW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RAW.Name = "RAW";
             this.RAW.ReadOnly = true;
