@@ -22,6 +22,7 @@ namespace USER0460
         bool alwaysActive = false;
         Choices commands = new Choices();
 
+        //Lists full of responses, should be condensed into text files as soon as possible
         #region
         string[] jokes = { "Tell me a joke", "How do you make an eggroll? You push it." };
         string[] opinions = {"That's disgusting.", "It's amazing.", "It makes me creamy.",
@@ -74,20 +75,29 @@ namespace USER0460
             
             string r = e.Result.Text;
 
-            if (r == "margery" || r == "ok computer" || r == "margery wake up you lepton" && active == false)
-                speak("Margery?", "Yes?"); active = true;
+            RAW.AppendText(r + "\n");
 
-            if (r == "cancel" && alwaysActive == false && active == true)
+            if(r == "margery" || r == "ok computer" || r == "margery wake up you lepton" && active == false)
+            {
+                speak("Margery?", "Yes?");
+                active = true;
+                Debug.Print("Enable");
+            }
+
+            if(r == "cancel" && alwaysActive == false && active == true)
+            {
                 speak("Cancel.", "Cancelled.");
-
+                Debug.Print("Cancel");
+            }
+                
             if (active == true)
             {
-                Debug.Print("Dinosaur");
+                Debug.Print("Active thing.");
                 if (r == "how are you")
                     speak("How are you?", "I am a bot. I do not have feelings.");
 
                 if (r == "say text")
-                    speak("Say text.", richTextBox2.Text);
+                    speak("Say text.", SayBox.Text);
 
                 if (r == "what do you think of dogs")
                     speak("What do you think of dogs?", "They look sexy.");
@@ -142,8 +152,8 @@ namespace USER0460
 
         private void speak(string input, string output)
         {
-            richTextBox1.AppendText("User : " + input + "\n");
-            richTextBox1.AppendText("Margery : " + output + "\n");
+            Console.AppendText("User : " + input + "\n");
+            Console.AppendText("Margery : " + output + "\n");
             speechS.Speak(output);
 
             if (alwaysActive == true) active = true;
@@ -169,9 +179,9 @@ namespace USER0460
 
         private void button1_Click(object sender, EventArgs e)
         {
-            speechS.SpeakAsync(richTextBox2.Text);
-            richTextBox1.AppendText("Bot : " + richTextBox2.Text + "\n");
-            if (!KeepText.Checked) richTextBox2.Clear();
+            speechS.SpeakAsync(SayBox.Text);
+            Console.AppendText("Bot : " + SayBox.Text + "\n");
+            if (!KeepText.Checked) SayBox.Clear();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -181,7 +191,7 @@ namespace USER0460
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
+            Console.Clear();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
