@@ -26,7 +26,7 @@ namespace USER0460
 
         //Lists full of responses
         #region
-        string[] jokes = File.ReadAllLines(@"C:\Dictionaries\Jokes.txt");
+        /*string[] jokes = File.ReadAllLines(@"C:\Dictionaries\Jokes.txt");
         string[] opinions = File.ReadAllLines(@"C:\Dictionaries\Opinions.txt");
         string[] greetings = File.ReadAllLines(@"C:\Dictionaries\Greetings.txt");
         string[] adjectives = File.ReadAllLines(@"C:\Dictionaries\Adjectives.txt");
@@ -36,7 +36,7 @@ namespace USER0460
         string[] swears = File.ReadAllLines(@"C:\Dictionaries\Swears.txt");
         string[] places = { "park", "shop", "bridge", "hotel", "cellar", "beach", "dungeon", "corner", "restaurant",
                         "alleyway", "bedroom", "kitchen", "shopping centre", "school", "classroom", "library", "cafeteria", "motorway",
-                    "street", "alleyway", "gay club", "ceiling", "chuch", "concentration camp" };
+                    "street", "alleyway", "gay club", "ceiling", "chuch", "concentration camp" };*/
 #endregion
 
         public USER0460()
@@ -125,7 +125,7 @@ namespace USER0460
                 if (r == "what is the date")
                     speak("What is the date?", "Local date is " + DateTime.Now.ToString("dd/MM/yyyy") + ".", true);
 
-                if (r == "do you like")
+                /*if (r == "do you like")
                     speak("Do you like", opinions[random.Next(opinions.Length)], true);
 
                 //if(r == "hello" || r == "hi" || r == "hey" || r == "yo" || r == "greetings")
@@ -151,7 +151,7 @@ namespace USER0460
                     speak("Tell me a story", "The " + adjectives[randAdjective] + " " + adjectives[randAdjective2] + " " + nouns[randNoun] +
                         " went to the " + places[randPlace] + " and " + adverbs[randAdverb] + " " + verbs[randVerb] + " a " + 
                         adjectives[randAdjective3] + " " + nouns[randNoun2] + ".", true);
-                }
+                }*/
             }
         }
 
